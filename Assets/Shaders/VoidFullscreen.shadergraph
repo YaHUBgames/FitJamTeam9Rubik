@@ -36,22 +36,7 @@
     ],
     "m_GroupDatas": [],
     "m_StickyNoteDatas": [],
-    "m_Edges": [
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "1e4c73c1071a40b8b88dfaf98702a286"
-                },
-                "m_SlotId": 1
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "afa295dc91b548c7bdf9ee355f4b852c"
-                },
-                "m_SlotId": 0
-            }
-        }
-    ],
+    "m_Edges": [],
     "m_VertexContext": {
         "m_Position": {
             "x": 0.0,
@@ -159,10 +144,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -191.0,
-            "y": 200.0,
-            "width": 145.0,
-            "height": 112.0
+            "x": -253.00003051757813,
+            "y": 221.0,
+            "width": 144.99998474121095,
+            "height": 111.99996948242188
         }
     },
     "m_Slots": [
