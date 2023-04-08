@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dieProjectil : MonoBehaviour
+public class dieProjectilThrow : MonoBehaviour
 {
     Rigidbody rb;
     bool destroyed = false;
@@ -18,7 +18,7 @@ public class dieProjectil : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void throwDie()
@@ -30,7 +30,7 @@ public class dieProjectil : MonoBehaviour
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             transform.LookAt(pointToLook);
-            rb.AddForce(transform.forward * 1000);
+            rb.AddForce(transform.forward * 200);
         }
     }
 
@@ -45,5 +45,4 @@ public class dieProjectil : MonoBehaviour
             destroyed = true;
         }
     }
-
 }

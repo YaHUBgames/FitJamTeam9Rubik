@@ -5955,6 +5955,11 @@ PrefabInstance:
       propertyPath: dice
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 938617241, guid: 48cd7adde4acc2c49a5b09e5a03022e1, type: 3}
+      propertyPath: die1
+      value: 
+      objectReference: {fileID: 2428348925597872535, guid: 20cb97b04be0eea4aad12bfbcfffd462,
+        type: 3}
     - target: {fileID: 1049538571037167023, guid: 48cd7adde4acc2c49a5b09e5a03022e1,
         type: 3}
       propertyPath: m_RootOrder
