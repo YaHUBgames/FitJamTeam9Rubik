@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public class CamMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody RB;
     [SerializeField] private Transform camRoot;
     private Vector3 offset;
 
