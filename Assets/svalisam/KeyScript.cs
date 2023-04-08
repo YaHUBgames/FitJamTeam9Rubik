@@ -44,6 +44,7 @@ public class KeyScript : MonoBehaviour
                 case 6: info.card2 = true;
                     break;
             }
+            info.CheckKeys();
             done = true;
             if(info.key1 || info.key2 || info.key3)
                 AudioManager.PlayStereoSound(ESound.PickupKey, transform.position);
