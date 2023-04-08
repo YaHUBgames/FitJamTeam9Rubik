@@ -7,6 +7,7 @@ public class DicePickup : MonoBehaviour
     // Start is called before the first frame update
     throwScript player;
     public int dice = 20;
+    public GameObject diceEffect;
     void Start()
     {
         player = GameObject.Find("Player").GetComponentInChildren<throwScript>();  
@@ -25,6 +26,7 @@ public class DicePickup : MonoBehaviour
         if(other.gameObject.transform.parent.gameObject.GetComponentInChildren<throwScript>()!= null)
         {
             player.AddDice(20);
+            Instantiate(diceEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
