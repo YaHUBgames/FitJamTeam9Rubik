@@ -41,6 +41,7 @@ namespace PP.AI
         [SerializeField] private Transform point2;
         [SerializeField] private bool patrolPoint = false;
 
+        [SerializeField] public Animator anim;
 
         public enum EAIState
         {
@@ -99,6 +100,7 @@ namespace PP.AI
                     if(collider.CompareTag("Player"))
                     {
                         aIState = EAIState.Chase;
+                        anim.SetBool("IsRunning", true);
                         patrolLoop.SetActive(false);
                         chaseLoop.SetActive(true);
                         if(returnPointsSpawned == 0)
@@ -128,7 +130,7 @@ namespace PP.AI
             else if(returnPointsSpawned > 0)
             {
                 aIState = EAIState.Return;
-                
+                anim.SetBool("IsRunning", false);
                 patrolLoop.SetActive(true);
                 chaseLoop.SetActive(false);
                 if(returnPoints[returnPoints.Count-1] != null)
