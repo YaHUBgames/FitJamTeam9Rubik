@@ -28,9 +28,19 @@ namespace PP.AI
         //[SerializeField] private int avoidMax = 20;
 
         private int returnPointsSpawned = 0;
+        private List<Transform> returnPoints = new List<Transform>();
         [SerializeField] private GameObject returnpoint;
         private float distanceTraveled = 0;
         private Vector3 lastPosition = Vector3.zero;
+
+        
+        [SerializeField] private GameObject patrolLoop;
+        [SerializeField] private GameObject chaseLoop;
+
+        [SerializeField] private Transform point1;
+        [SerializeField] private Transform point2;
+        [SerializeField] private bool patrolPoint = false;
+
 
         public enum EAIState
         {
@@ -39,7 +49,7 @@ namespace PP.AI
             Return
         }
 
-        private EAIState aIState = EAIState.Patrol;
+        public EAIState aIState = EAIState.Patrol;
 
 
         private Vector3 aim = Vector3.zero;
@@ -68,11 +78,6 @@ namespace PP.AI
         private void SightCheck()
         {
             
-            if(aIState == EAIState.Patrol)
-            {
-                Debug.Log("PATROL");
-            }
-            
             Vector3[] selfDirections = new Vector3[directionCount];
             for (int i = 0; i < directionCount; i++)
             {
@@ -81,7 +86,7 @@ namespace PP.AI
                 selfDirections[i].Normalize();
             }
 
-            Collider[] seekColliders = Physics.OverlapSphere(_transform.position, seekSphere, (aIState == EAIState.Return)?returnMask:seekMask);
+            Collider[] seekColliders = Physics.OverlapSphere(_transform.position, seekSphere, seekMask);
             seek = new float[directionCount];
             avoid = new float[directionCount];
             if (seekColliders.Length != 0)
@@ -89,12 +94,16 @@ namespace PP.AI
                 float seekNew = 0;
                 foreach (Collider collider in seekColliders)
                 {
-                    if(collider.transform.CompareTag("Player"))
+                    if(returnPointsSpawned > 0)
+                        returnPoints[returnPoints.Count-1].GetComponent<ReturnPoint>().SetSeek(false);
+                    if(collider.CompareTag("Player"))
                     {
                         aIState = EAIState.Chase;
+                        patrolLoop.SetActive(false);
+                        chaseLoop.SetActive(true);
                         if(returnPointsSpawned == 0)
                         {
-                            Instantiate(returnpoint, _transform.position, Quaternion.identity);
+                            returnPoints.Add(Instantiate(returnpoint, _transform.position - _transform.forward, Quaternion.identity).transform);
                             distanceTraveled = 0;
                             returnPointsSpawned++; 
                         }
@@ -110,18 +119,38 @@ namespace PP.AI
                         if (seekNew > seek[i])
                             seek[i] = seekNew;
                     }
+                    break;
                 }
 
                 //for (int i = 0; i < directionCount; i++)
                     //Debug.DrawRay(_transform.position + Vector3.up * 0.2f, seek[i] * selfDirections[i], Color.blue, updateT);
             }
+            else if(returnPointsSpawned > 0)
+            {
+                aIState = EAIState.Return;
+                
+                patrolLoop.SetActive(true);
+                chaseLoop.SetActive(false);
+                if(returnPoints[returnPoints.Count-1] != null)
+                {
+                    float seekNew = 0;
+                    Vector3 dir = (returnPoints[returnPoints.Count-1].position - _transform.position);
+                    returnPoints[returnPoints.Count-1].GetComponent<ReturnPoint>().SetSeek(true);
+
+                    for (int i = 0; i < directionCount; i++)
+                    {
+                        dir.Normalize();
+                        dir.y = 0;
+                        seekNew = seekMultip * Vector3.Dot(selfDirections[i], dir); //.normalized * (seekSphere - dir.magnitude) / seekSphere);
+                        if (seekNew > seek[i])
+                            seek[i] = seekNew;
+                    }
+                }
+            }
             else
             {
-                if(aIState == EAIState.Chase)
-                    aIState = EAIState.Return;
                 aim = Vector3.zero;
                 legs.SetDirection(aim);
-                return;
             }
 
             Collider[] avoidColliders = Physics.OverlapSphere(_transform.position, avoidSphere, avoidMask);
@@ -164,10 +193,10 @@ namespace PP.AI
             {
                 distanceTraveled += (_transform.position - lastPosition).magnitude;
                 lastPosition = _transform.position;
-                if(distanceTraveled >= seekSphere)
+                if(distanceTraveled >= 2)
                 {
-                    Instantiate(returnpoint, _transform.position, Quaternion.identity);
-                    distanceTraveled -= seekSphere;
+                    returnPoints.Add(Instantiate(returnpoint, _transform.position - _transform.forward, Quaternion.identity).transform);
+                    distanceTraveled -= 2;
                     returnPointsSpawned++;
                 }
             }
@@ -175,6 +204,27 @@ namespace PP.AI
             {
                 aIState = EAIState.Patrol;
             }
+
+            if(aIState == EAIState.Patrol)
+            {
+                Vector3 dirPat = (patrolPoint?point1.position:point2.position) -_transform.position;
+                dirPat.y = 0;
+                if(dirPat.magnitude < 0.2f)
+                {
+                    patrolPoint = !patrolPoint;
+                    dirPat = (patrolPoint?point1.position:point2.position) -_transform.position;
+                    dirPat.y = 0;
+                }
+                dirPat.Normalize();
+                legs.SetDirection(dirPat);
+            }
         }
+
+        public void OnEndpointCollision()
+        {
+            returnPoints.Remove(returnPoints[returnPoints.Count-1]);
+            returnPointsSpawned--;
+        }
+        
     }
 }
