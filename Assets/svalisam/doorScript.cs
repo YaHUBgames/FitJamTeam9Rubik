@@ -53,7 +53,28 @@ public class doorScript : MonoBehaviour
             if (key6  && !info.card3)
                 return;
 
-            anim.SetBool("open",true);
+            if (key1)
+                info.key1 = false;
+
+            if (key2)
+                info.key2 = false;
+
+            if (key3)
+                info.key3 = false;
+
+            if (key4)
+                info.card1 = false;
+
+            if (key5)
+                info.card2 = false;
+
+            if (key6)
+                info.card3 = false;
+
+
+
+            info.CheckKeys();
+            anim.SetBool("open", true);
             if(key1 || key4 || key5 || key6)
                 AudioManager.PlayStereoSound(ESound.OpenDoorWithCard, transform.position);
   
