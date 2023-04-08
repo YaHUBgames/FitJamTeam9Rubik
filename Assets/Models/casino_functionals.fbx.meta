@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c18b578df90bf740b8cab2988103fbd
+guid: 951c2fd6796bdaf41942e49ae9f7a67b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,73 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ArmchairFabricMat
-    second: {fileID: 2100000, guid: 8d21d3e0496fa2f4ca2395a342b27233, type: 2}
+      name: ChipDetailMat
+    second: {fileID: 2100000, guid: 60b81118ac1c1cd48a09a396c980c6cd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ArmchairFrameMat
-    second: {fileID: 2100000, guid: feea0dd6cbda64644a284911562d0b93, type: 2}
+      name: ChipMainMat
+    second: {fileID: 2100000, guid: f8bf7cc3061a92943abca3c35ca0a759, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ChairMat
-    second: {fileID: 2100000, guid: 4a929afd0f8bd7b4b86454694ab5397c, type: 2}
+      name: KeyMat
+    second: {fileID: 2100000, guid: 186c7cac5e48c8d4da053bee3130abde, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CueBallMat
-    second: {fileID: 2100000, guid: 5a44f3d56d3a9124b8d04cbdfb101937, type: 2}
+      name: KeycardDetailMat
+    second: {fileID: 2100000, guid: a0a550345d727ab4d9a7ecab7c5d3ada, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: PillowMat
-    second: {fileID: 2100000, guid: 334f7e2e15d18034a9cb6732020b9803, type: 2}
+      name: KeycardMainMat
+    second: {fileID: 2100000, guid: ef4ad94d5ed0d21499637645be39219f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: PlantMat
-    second: {fileID: 2100000, guid: 2b125b4e12b2a734a831750de710a002, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PlantSoilMat
-    second: {fileID: 2100000, guid: 414b61554c47eb74d88b3d5e89b55ebf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PlantpotMat
-    second: {fileID: 2100000, guid: 2d75ac86351000944be4cf81baabdd9d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PoolTableFarbicMat
-    second: {fileID: 2100000, guid: 1ea46e772bdf2794eb78daf1dcb78096, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PoolTableFrameMat
-    second: {fileID: 2100000, guid: e368033f8f5796643934d4fb227f7ce8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PoolTableHoleContrastMat
-    second: {fileID: 2100000, guid: 785979937791f7749a1be6540394ecf9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PoopStickMat
-    second: {fileID: 2100000, guid: 5574e256e155da44ba8a66a9ae64137f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SmolTableMat
-    second: {fileID: 2100000, guid: 8e73e5de322eeb046a130795ccb6a81c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TableRugMat
-    second: {fileID: 2100000, guid: 8fd4e0e9497c9334eb06efc9310deab4, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 9bb99f4bfb5521d48a4f029d27cfb5aa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -140,7 +100,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 2
+    tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
