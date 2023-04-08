@@ -7,6 +7,7 @@ public class dieProjectil : MonoBehaviour
     Rigidbody rb;
     bool destroyed = false;
     public GameObject particle;
+    public GameObject sonar;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class dieProjectil : MonoBehaviour
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             transform.LookAt(pointToLook);
-            rb.AddForce(transform.forward * 3000);
+            rb.AddForce(transform.forward * 1000);
         }
     }
 
@@ -40,6 +41,7 @@ public class dieProjectil : MonoBehaviour
             StartCoroutine(GameObject.Find("CameraHolder").GetComponent<ShakeCamera>().shake(0.4f, 1));
             Destroy(gameObject);
             Instantiate(particle, transform.position, Quaternion.identity);
+            Instantiate(sonar, transform.position, Quaternion.identity);
             destroyed = true;
         }
     }
