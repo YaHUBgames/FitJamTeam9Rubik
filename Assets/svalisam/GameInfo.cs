@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameInfo : MonoBehaviour
 {
     public int score;
+    public int chips=0;
 
     public bool key1 = false;
     public bool key2 = false;
@@ -30,4 +31,11 @@ public class GameInfo : MonoBehaviour
     {
         score++;
     }
+
+    public void addChips(int value)
+    {
+        chips+=value;
+    }
+
+
 }
