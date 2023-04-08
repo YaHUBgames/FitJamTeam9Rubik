@@ -19,12 +19,28 @@ namespace PP.AI
         [SerializeField] private float seekMultip = 1f;
         [SerializeField] private float seekSphere = 10f;
         [SerializeField] private LayerMask seekMask;
+        [SerializeField] private LayerMask returnMask;
         [SerializeField] private float seekMax = 1f;
         private float[] avoid;
         [SerializeField] private float avoidMultip = 2f;
         [SerializeField] private float avoidSphere = 10f;
         [SerializeField] private LayerMask avoidMask;
         //[SerializeField] private int avoidMax = 20;
+
+        private int returnPointsSpawned = 0;
+        [SerializeField] private GameObject returnpoint;
+        private float distanceTraveled = 0;
+        private Vector3 lastPosition = Vector3.zero;
+
+        public enum EAIState
+        {
+            Patrol,
+            Chase,
+            Return
+        }
+
+        private EAIState aIState = EAIState.Patrol;
+
 
         private Vector3 aim = Vector3.zero;
 
@@ -59,7 +75,7 @@ namespace PP.AI
                 selfDirections[i].Normalize();
             }
 
-            Collider[] seekColliders = Physics.OverlapSphere(_transform.position, seekSphere, seekMask);
+            Collider[] seekColliders = Physics.OverlapSphere(_transform.position, seekSphere, (aIState == EAIState.Return)?returnMask:seekMask);
             seek = new float[directionCount];
             avoid = new float[directionCount];
             if (seekColliders.Length != 0)
@@ -67,6 +83,10 @@ namespace PP.AI
                 float seekNew = 0;
                 foreach (Collider collider in seekColliders)
                 {
+                    if(collider.transform.CompareTag("Player"))
+                    {
+                        aIState = EAIState.Chase;
+                    }
                     Vector3 dir = (collider.ClosestPoint(_transform.position) - _transform.position);
                     if (dir.magnitude <= seekMax)
                         continue;
@@ -85,6 +105,7 @@ namespace PP.AI
             }
             else
             {
+                aIState = EAIState.Return;
                 aim = Vector3.zero;
                 legs.SetDirection(aim);
                 return;
@@ -125,6 +146,26 @@ namespace PP.AI
             aim.Normalize();
             //Debug.DrawRay(_transform.position + Vector3.up, aim * 3, Color.magenta, updateT);
             legs.SetDirection(aim);
+
+            if(aIState == EAIState.Chase)
+            {
+                distanceTraveled += (_transform.position - lastPosition).magnitude;
+                lastPosition = _transform.position;
+                if(distanceTraveled >= seekSphere)
+                {
+                    Instantiate(returnpoint, _transform.position, Quaternion.identity);
+                    distanceTraveled -= seekSphere;
+                    returnPointsSpawned++;
+                }
+            }
+            if(aIState == EAIState.Return && returnPointsSpawned <= 0)
+            {
+                aIState = EAIState.Patrol;
+            }
+            if(aIState == EAIState.Patrol)
+            {
+                Debug.Log("PATROL");
+            }
         }
     }
 }
