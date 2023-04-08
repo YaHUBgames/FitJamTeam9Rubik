@@ -32,6 +32,8 @@ public class HealthBar : MonoBehaviour
 
     public void takeDamage(int damage)
     {
+        Debug.Log("TAKE GAMAGE");
+        AudioManager.PlayStereoSound(ESound.DiceLost, transform.position);
         health -= damage;
     }
 }

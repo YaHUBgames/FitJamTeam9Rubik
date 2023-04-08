@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
         PlaySoundLocal(soundType, transform.position, transform, false);
     }
 
-    public void PlayStereoSoundLocal(ESound soundType, Vector3 soundPosition, Transform soundParent)
+    public void PlayStereoSoundLocal(ESound soundType, Vector3 soundPosition, Transform soundParent = null)
     {
         PlaySoundLocal(soundType, soundPosition, soundParent == null ? transform : soundParent, true);
     }

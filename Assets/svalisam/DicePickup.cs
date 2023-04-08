@@ -12,19 +12,13 @@ public class DicePickup : MonoBehaviour
         player = GameObject.Find("Player").GetComponentInChildren<throwScript>();  
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("touched");
         if(other.gameObject.transform.parent.gameObject.GetComponentInChildren<throwScript>()!= null)
         {
             player.AddDice(20);
+            AudioManager.PlayStereoSound(ESound.DicePickUp, transform.position);
             Destroy(gameObject);
         }
     }

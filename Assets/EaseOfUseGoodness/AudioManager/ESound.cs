@@ -13,8 +13,9 @@ public enum ESound
     DiceFloorImpact,
     DicePickUp,
     DiceLost,
+    DiceRollStep,
 
-    PickipKey = 50,
+    PickupKey = 50,
     PicupCard,
     PickupChip,
     Pickup,
@@ -27,6 +28,7 @@ public enum ESound
     OpenDoorWithKey = 70,
     OpenDoorWithCard,
     OpenMainDoor,
+    CloseDoor,
 
     GuardStep = 80,
     GuardAgroStart,
