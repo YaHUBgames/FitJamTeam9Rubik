@@ -31,6 +31,7 @@ public class dieProjectil : MonoBehaviour
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             transform.LookAt(pointToLook);
             rb.AddForce(transform.forward * 1000);
+            rb.angularVelocity=new Vector3(10,0,10);
         }
     }
 

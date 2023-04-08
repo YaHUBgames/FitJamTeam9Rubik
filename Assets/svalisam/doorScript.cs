@@ -12,12 +12,17 @@ public class doorScript : MonoBehaviour
     public bool key5;
     public bool key6;
 
+    Animator anim;
+    public BoxCollider doorCollider;
     GameInfo info;
+
+    bool hasOpend = false;
 
     // Start is called before the first frame update
     void Start()
     {
         info = GameObject.Find("GameInfo").GetComponent<GameInfo>();
+        anim = gameObject.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -28,7 +33,7 @@ public class doorScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="Player")
+        if (collision.gameObject.tag=="Player" && !hasOpend)
         {
             if (key1  && !info.key1)
                 return;
@@ -48,8 +53,16 @@ public class doorScript : MonoBehaviour
             if (key6  && !info.card3)
                 return;
 
-            Destroy(gameObject);
+            anim.SetBool("open",true);
+            doorCollider.enabled = false;
+            hasOpend = true;
         }
+    }
+
+    public void closeDoor()
+    {
+        doorCollider.enabled = true;
+        anim.SetBool("open", false);
     }
 
 }
