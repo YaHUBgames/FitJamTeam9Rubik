@@ -3311,7 +3311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239322318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 20.91, z: 0.96}
+  m_LocalPosition: {x: 0.71, y: 12, z: 0.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5396,12 +5396,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1049538572081347026, guid: 48cd7adde4acc2c49a5b09e5a03022e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1049538572280879426, guid: 48cd7adde4acc2c49a5b09e5a03022e1,
         type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 159153502}
-    m_RemovedComponents: []
+    - target: {fileID: 1049538572335999848, guid: 48cd7adde4acc2c49a5b09e5a03022e1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049538572335999852, guid: 48cd7adde4acc2c49a5b09e5a03022e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1049538572335999850, guid: 48cd7adde4acc2c49a5b09e5a03022e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 48cd7adde4acc2c49a5b09e5a03022e1, type: 3}
 --- !u!4 &1877448270 stripped
 Transform:
