@@ -16,6 +16,8 @@ namespace PP.AI
         private Vector3 wantToAim = Vector3.zero;
         [SerializeField] private float gg;
 
+        [SerializeField] public Animator anim;
+
         private void Update()
         {
             aim = Vector3.Slerp(aim, wantToAim, Time.deltaTime * interpSpeed);
@@ -47,6 +49,17 @@ namespace PP.AI
             direction.y = 0;
             direction.Normalize();
             wantToAim = direction;
+        }
+
+
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.GetComponent<dieProjectil>() || collision.gameObject.GetComponent<dieProjectilThrow>())
+            {
+                anim.SetTrigger("hitLight");
+                rb.velocity = new Vector3(0, 0, 0);
+            }
         }
     }
 }
