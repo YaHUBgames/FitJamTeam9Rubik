@@ -31,6 +31,7 @@ public class dieProjectilThrow : MonoBehaviour
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             transform.LookAt(pointToLook);
             rb.AddForce(transform.forward * 200);
+            rb.angularVelocity = new Vector3(10, 0, 10);
         }
     }
 
