@@ -5,19 +5,32 @@ using UnityEngine;
 public class throwScript : MonoBehaviour
 {
     public GameObject die;
+    public GameObject die1;
     public Vector3 mousePos;
+    pauseMenuScript menu;
+    public int dice;
+
+    float throwCooldown=0.5f;
+    float nextThrow = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        menu = GameObject.Find("PauseMenu").GetComponent<pauseMenuScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextThrow)
         {
             throwDie();
+            nextThrow = Time.time + throwCooldown;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > nextThrow)
+        {
+            throwDie1();
+            nextThrow = Time.time + throwCooldown;
         }
     }
 
@@ -30,7 +43,11 @@ public class throwScript : MonoBehaviour
 
     public void throwDie()
     {
-
+        if (menu.isPaused)
+            return;
+        dice--;
+        if (dice == 0)
+            Die();
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
         float rayLength;
@@ -38,10 +55,38 @@ public class throwScript : MonoBehaviour
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.red);
-            GameObject newDie = Instantiate(die, transform.position, Quaternion.identity);
-            Debug.Log(newDie);
+            Instantiate(die, transform.position, Quaternion.identity);
         }
 
+    }
+
+    public void throwDie1()
+    {
+        if (menu.isPaused)
+            return;
+        dice--;
+        if (dice == 0)
+            Die();
+        Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        float rayLength;
+        if (groundPlane.Raycast(cameraRay, out rayLength))
+        {
+            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+            Debug.DrawLine(cameraRay.origin, pointToLook, Color.red);
+            Instantiate(die1, transform.position, Quaternion.identity);
+        }
+
+    }
+
+    public void Die()
+    {
+
+    }
+
+    public void AddDice(int amount)
+    {
+        dice += amount;
     }
 
 

@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     // Start is called before the first frame update
-    int maxHealth = 50;
+    int maxHealth;
     public int health;
+    throwScript player;
 
     public Slider slider;
     void Start()
     {
+        player = GameObject.Find("Player").GetComponentInChildren<throwScript>();
+        maxHealth = player.dice;
         health = maxHealth;
         slider.maxValue = maxHealth;
     }
@@ -19,6 +22,11 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        health = player.dice;
+        if(health > maxHealth)
+        {
+            slider.maxValue = health;
+        }
         slider.value = health;
     }
 
