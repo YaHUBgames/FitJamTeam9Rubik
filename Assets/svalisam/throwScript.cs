@@ -10,6 +10,8 @@ public class throwScript : MonoBehaviour
     pauseMenuScript menu;
     public int dice;
 
+    GameInfo info;
+
     float throwCooldown=0.5f;
     float nextThrow = 0;
 
@@ -17,6 +19,7 @@ public class throwScript : MonoBehaviour
     void Start()
     {
         menu = GameObject.Find("PauseMenu").GetComponent<pauseMenuScript>();
+        info = GameObject.Find("GameInfo").GetComponent<GameInfo>();
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class throwScript : MonoBehaviour
         if (menu.isPaused)
             return;
         dice--;
+        info.addScore();
         if (dice == 0)
             Die();
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -65,6 +69,7 @@ public class throwScript : MonoBehaviour
         if (menu.isPaused)
             return;
         dice--;
+        info.addScore();
         if (dice == 0)
             Die();
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -81,7 +86,7 @@ public class throwScript : MonoBehaviour
 
     public void Die()
     {
-
+        menu.Lose();
     }
 
     public void AddDice(int amount)

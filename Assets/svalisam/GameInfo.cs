@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameInfo : MonoBehaviour
 {
+    public int score;
 
     public bool key1 = false;
     public bool key2 = false;
@@ -23,5 +24,10 @@ public class GameInfo : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void addScore()
+    {
+        score++;
     }
 }
