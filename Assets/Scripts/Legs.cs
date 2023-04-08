@@ -14,7 +14,10 @@ namespace PP.AI
         [SerializeField] private float interpSpeed = 1f;
         private Vector3 aim = Vector3.zero;
         private Vector3 wantToAim = Vector3.zero;
-        [SerializeField] private float gg;
+
+        [SerializeField] private float stepSize = 1f;
+        private Vector3 lastPosition = Vector3.zero;
+        private float walked = 0;
 
         [SerializeField] public Animator anim;
 
@@ -26,6 +29,15 @@ namespace PP.AI
 
         private void Move()
         {
+            walked += (transform.position - lastPosition).magnitude;
+            lastPosition = transform.position;
+            if(walked >= stepSize)
+            {
+                walked -= stepSize;
+
+                AudioManager.PlayStereoSound(ESound.GuardStep, transform.position);
+            }
+
             if (wantToAim == Vector3.zero)
             {
                 aim = wantToAim;
@@ -58,6 +70,7 @@ namespace PP.AI
             if (collision.gameObject.GetComponent<dieProjectil>() || collision.gameObject.GetComponent<dieProjectilThrow>())
             {
                 anim.SetTrigger("hitLight");
+                AudioManager.PlayStereoSound(ESound.GuardHit, transform.position, transform);
                 rb.velocity = new Vector3(0, 0, 0);
             }
         }

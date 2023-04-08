@@ -33,6 +33,8 @@ public enum ESound
     GuardStep = 80,
     GuardAgroStart,
     GuardAgroStop,
+    GuardHit,
+    GuardWhistle,
 
     SonarPing = 90
     
