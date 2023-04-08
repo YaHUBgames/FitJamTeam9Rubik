@@ -67,6 +67,12 @@ namespace PP.AI
 
         private void SightCheck()
         {
+            
+            if(aIState == EAIState.Patrol)
+            {
+                Debug.Log("PATROL");
+            }
+            
             Vector3[] selfDirections = new Vector3[directionCount];
             for (int i = 0; i < directionCount; i++)
             {
@@ -86,6 +92,12 @@ namespace PP.AI
                     if(collider.transform.CompareTag("Player"))
                     {
                         aIState = EAIState.Chase;
+                        if(returnPointsSpawned == 0)
+                        {
+                            Instantiate(returnpoint, _transform.position, Quaternion.identity);
+                            distanceTraveled = 0;
+                            returnPointsSpawned++; 
+                        }
                     }
                     Vector3 dir = (collider.ClosestPoint(_transform.position) - _transform.position);
                     if (dir.magnitude <= seekMax)
@@ -105,7 +117,8 @@ namespace PP.AI
             }
             else
             {
-                aIState = EAIState.Return;
+                if(aIState == EAIState.Chase)
+                    aIState = EAIState.Return;
                 aim = Vector3.zero;
                 legs.SetDirection(aim);
                 return;
@@ -161,10 +174,6 @@ namespace PP.AI
             if(aIState == EAIState.Return && returnPointsSpawned <= 0)
             {
                 aIState = EAIState.Patrol;
-            }
-            if(aIState == EAIState.Patrol)
-            {
-                Debug.Log("PATROL");
             }
         }
     }

@@ -6,7 +6,7 @@ public class CharacterControler : MonoBehaviour
     [SerializeField] private Rigidbody RB;
     [SerializeField] private Transform TR;
     [Header("Input")]
-    [SerializeField] private Vector2 input;
+    [SerializeField] public Vector2 input;
     private Vector3 corectedForward = Vector3.forward;
     private Vector3 corectedRight = Vector3.right;
     private Vector3 corectedInput = Vector3.zero;

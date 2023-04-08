@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1049538571037167023}
   - component: {fileID: 1049538571037167024}
+  - component: {fileID: 1877448272}
   m_Layer: 6
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +55,24 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1877448272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049538571037167025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ce6f98f95ddd67280e31ba5200b631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RB: {fileID: 1049538571037167024}
+  speedMult: {x: 0.7, y: 0}
+  diceMaterial: {fileID: 2100000, guid: 83f5f1573cee22a48a335e60ea626451, type: 2}
+  rollShaderProperty: _ScrollSpeed
+  CC: {fileID: 1049538572280879426}
+  smoothSpeed: 4
 --- !u!1 &1049538572081347026
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +91,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1049538572081347025
 Transform:
   m_ObjectHideFlags: 0
@@ -302,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   die: {fileID: 2428348925597872535, guid: 04e0946151dcacf43b5d423ea4c765d1, type: 3}
-  die1: {fileID: 0}
+  die1: {fileID: 2428348925597872535, guid: 20cb97b04be0eea4aad12bfbcfffd462, type: 3}
   mousePos: {x: 0, y: 0, z: 0}
   dice: 0
 --- !u!1 &1049538572335999852
@@ -317,14 +336,13 @@ GameObject:
   - component: {fileID: 1049538572335999847}
   - component: {fileID: 1049538572335999848}
   - component: {fileID: 1049538572335999849}
-  - component: {fileID: 1049538572335999850}
   m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1049538572335999851
 Transform:
   m_ObjectHideFlags: 0
@@ -356,7 +374,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049538572335999852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -405,26 +423,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1049538572335999850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049538572335999852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b819c3464c0ee4babd051c172067ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 1049538571037167024}
-  depthBeforeSubmerged: 0.1
-  cubeVolume: 6
-  floaterCount: 1
-  waterDrag: 0.99
-  waterAngularDrag: 0.5
-  splashSize: 1
-  movementSlashingTreshold: 0.8
 --- !u!1 &1049538572401798029
 GameObject:
   m_ObjectHideFlags: 0
