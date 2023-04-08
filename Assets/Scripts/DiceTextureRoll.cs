@@ -11,10 +11,14 @@ public class DiceTextureRoll : MonoBehaviour
 
     [SerializeField] private CharacterControler CC;
     [SerializeField] private float smoothSpeed = 1;
+    [SerializeField] private float rollStep = 1;
 
     private int rollPropertyID = 0;
     private Vector2 roll;
+    private Vector2 lastRoll;
+    
     private Vector2 inputSmooth = Vector2.one;
+    [SerializeField] private Transform soundParent;
 
 private void Start()
     {
@@ -26,6 +30,12 @@ private void Start()
         roll += Time.deltaTime * inputSmooth.magnitude * speedMult;
             
         diceMaterial.SetVector(rollPropertyID, roll);
+
+        if(roll.magnitude - lastRoll.magnitude > rollStep)
+        {
+            lastRoll = roll;
+            AudioManager.PlayStereoSound(ESound.DiceRollStep, transform.position,soundParent);
+        }
     }
 
 }

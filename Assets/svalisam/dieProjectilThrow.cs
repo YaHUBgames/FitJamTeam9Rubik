@@ -39,6 +39,11 @@ public class dieProjectilThrow : MonoBehaviour
     {
         if (!destroyed)
         {
+            if(collision.transform.CompareTag("Enemy"))
+                AudioManager.PlayStereoSound(ESound.DiceFleshImpact, transform.position);
+            else
+                AudioManager.PlayStereoSound(ESound.DiceFloorImpact, transform.position);
+
             StartCoroutine(GameObject.Find("CameraHolder").GetComponent<ShakeCamera>().shake(0.4f, 1));
             Destroy(gameObject);
             Instantiate(particle, transform.position, Quaternion.identity);

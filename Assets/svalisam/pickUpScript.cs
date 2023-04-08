@@ -14,16 +14,11 @@ public class pickUpScript : MonoBehaviour
         info = GameObject.Find("GameInfo").GetComponent<GameInfo>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            AudioManager.PlayStereoSound(ESound.PickupChip, transform.position);
             Instantiate(effect, transform.position, Quaternion.identity);
             info.addChips(chipValue);
             Destroy(gameObject);

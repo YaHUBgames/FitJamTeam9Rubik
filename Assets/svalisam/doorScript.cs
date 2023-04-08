@@ -54,6 +54,12 @@ public class doorScript : MonoBehaviour
                 return;
 
             anim.SetBool("open",true);
+            if(key1 || key4 || key5 || key6)
+                AudioManager.PlayStereoSound(ESound.OpenDoorWithCard, transform.position);
+  
+            if(key3 || key5)
+                AudioManager.PlayStereoSound(ESound.OpenDoorWithKey, transform.position);
+    
             doorCollider.enabled = false;
             hasOpend = true;
         }
@@ -61,6 +67,7 @@ public class doorScript : MonoBehaviour
 
     public void closeDoor()
     {
+        AudioManager.PlayStereoSound(ESound.CloseDoor, transform.position);
         doorCollider.enabled = true;
         anim.SetBool("open", false);
     }

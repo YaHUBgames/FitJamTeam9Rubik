@@ -73,6 +73,8 @@ MonoBehaviour:
   rollShaderProperty: _ScrollSpeed
   CC: {fileID: 1049538572280879426}
   smoothSpeed: 4
+  rollStep: 0.2
+  soundParent: {fileID: 1049538572280879425}
 --- !u!1 &1049538572081347026
 GameObject:
   m_ObjectHideFlags: 0

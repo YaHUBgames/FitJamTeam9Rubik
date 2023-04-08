@@ -16,6 +16,6 @@ public class SoundPack
 
     public Sound GetRandomSound()
     {
-        return sounds[Random.Range(0, sounds.Length)];
+        return sounds[Random.Range(0, sounds.Length-1)];
     }
 }

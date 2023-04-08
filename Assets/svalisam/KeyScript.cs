@@ -45,6 +45,11 @@ public class KeyScript : MonoBehaviour
                     break;
             }
             done = true;
+            if(info.key1 || info.key2 || info.key3)
+                AudioManager.PlayStereoSound(ESound.PickupKey, transform.position);
+            if(info.card1 || info.card2 || info.card3)
+                AudioManager.PlayStereoSound(ESound.PicupCard, transform.position);
+                
             Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
