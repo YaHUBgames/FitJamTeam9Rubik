@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12732342, g: 0.13415185, b: 0.121079616, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029168, g: 0.22572425, b: 0.30693048, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -431,7 +431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114349323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3311,7 +3311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239322318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 12, z: 0.96}
+  m_LocalPosition: {x: 0.71, y: 20.91, z: 0.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4353,12 +4353,17 @@ MonoBehaviour:
   seekMask:
     serializedVersion: 2
     m_Bits: 64
+  returnMask:
+    serializedVersion: 2
+    m_Bits: 65536
   seekMax: 1
   avoidMultip: 2
   avoidSphere: 1
   avoidMask:
     serializedVersion: 2
     m_Bits: 32768
+  returnpoint: {fileID: 502007193590134443, guid: 0487cfd651bafc91b900811a290a8002,
+    type: 3}
 --- !u!1 &1515518280
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,6 +5341,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 938617241, guid: 48cd7adde4acc2c49a5b09e5a03022e1, type: 3}
+      propertyPath: die1
+      value: 
+      objectReference: {fileID: 2428348925597872535, guid: 20cb97b04be0eea4aad12bfbcfffd462,
+        type: 3}
     - target: {fileID: 1049538571037167023, guid: 48cd7adde4acc2c49a5b09e5a03022e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -5412,6 +5422,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1049538572335999852, guid: 48cd7adde4acc2c49a5b09e5a03022e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286934110183306775, guid: 48cd7adde4acc2c49a5b09e5a03022e1,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10076,7 +10091,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52540
+  m_Name: pb_Mesh33336
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
