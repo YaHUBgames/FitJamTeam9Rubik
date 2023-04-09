@@ -94,5 +94,12 @@ public class throwScript : MonoBehaviour
         dice += amount;
     }
 
+    public void LoseDice(int amount)
+    {
+        dice -= amount;
+        if (dice <= 0)
+            Die();
+    }
+
 
 }

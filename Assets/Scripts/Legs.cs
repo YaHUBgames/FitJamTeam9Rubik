@@ -21,6 +21,14 @@ namespace PP.AI
 
         [SerializeField] public Animator anim;
 
+        float nextAttack=0;
+         HealthBar playerHealth;
+
+        private void Start()
+        {
+            playerHealth = GameObject.Find("Life").GetComponent<HealthBar>();   
+        }
+
         private void Update()
         {
             aim = Vector3.Slerp(aim, wantToAim, Time.deltaTime * interpSpeed);
@@ -71,6 +79,12 @@ namespace PP.AI
                 anim.SetTrigger("hitLight");
                 AudioManager.PlayStereoSound(ESound.GuardHit, transform.position, transform);
                 rb.velocity = new Vector3(0, 0, 0);
+            }
+
+            else if (collision.gameObject.tag == "Player" && Time.time > nextAttack)
+            {
+                playerHealth.takeDamage(20);
+                nextAttack = Time.time + 1;
             }
         }
     }
