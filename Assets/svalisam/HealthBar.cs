@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     // Start is called before the first frame update
-    float maxHealth=50;
+    float maxHealth=100;
     public float health;
     throwScript player;
     public ShakeCamera cameraShake;
