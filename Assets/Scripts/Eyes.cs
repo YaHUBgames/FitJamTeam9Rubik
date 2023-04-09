@@ -99,8 +99,9 @@ namespace PP.AI
                         returnPoints[returnPoints.Count-1].GetComponent<ReturnPoint>().SetSeek(false);
                     if(collider.CompareTag("Player"))
                     {
+                        if(aIState != EAIState.Chase)
+                            AudioManager.PlayStereoSound(ESound.GuardAgroStart, transform.position, _transform);
                         aIState = EAIState.Chase;
-                        AudioManager.PlayStereoSound(ESound.GuardAgroStart, transform.position, _transform);
                         anim.SetBool("IsRunning", true);
                         patrolLoop.SetActive(false);
                         chaseLoop.SetActive(true);
@@ -130,8 +131,9 @@ namespace PP.AI
             }
             else if(returnPointsSpawned > 0)
             {
+                if(aIState != EAIState.Return)
+                    AudioManager.PlayStereoSound(ESound.GuardAgroStop, transform.position, _transform);
                 aIState = EAIState.Return;
-                AudioManager.PlayStereoSound(ESound.GuardAgroStop, transform.position, _transform);
                 anim.SetBool("IsRunning", false);
                 patrolLoop.SetActive(true);
                 chaseLoop.SetActive(false);

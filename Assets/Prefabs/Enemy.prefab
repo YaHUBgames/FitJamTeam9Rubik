@@ -1618,7 +1618,7 @@ MonoBehaviour:
   chaseForceMult: 2
   chaseSpeedMult: 2
   interpSpeed: 100
-  gg: 0
+  stepSize: 0.8
   anim: {fileID: 8445144363010482259}
 --- !u!1 &5770412580974359044
 GameObject:
