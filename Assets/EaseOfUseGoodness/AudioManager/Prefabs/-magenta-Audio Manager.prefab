@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4803390776883387527}
   - component: {fileID: 4803390776883387526}
+  - component: {fileID: 1711451004258317054}
   m_Layer: 0
   m_Name: -magenta-Audio Manager
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   audio2DPrefab: {fileID: 2569379027966187991, guid: e72cac4eff2b4774a9fec47ce9521de8,
     type: 3}
   soundDictionary:
-    m_keys: 15000000160000001700000018000000190000001a000000320000003300000046000000470000005000000051000000520000005300000054000000
+    m_keys: 15000000160000001700000018000000190000001a0000003200000033000000460000004700000050000000510000005200000053000000540000005a0000005b0000005c000000
     m_values:
     - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
@@ -88,7 +89,7 @@ MonoBehaviour:
       pitchSpread: {x: -0.05, y: 0.05}
       sounds:
       - audioClip: {fileID: 8300000, guid: 94dcccbb3c156232bbbb6e547552fdef, type: 3}
-        volume: 1
+        volume: 0.865
     - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
@@ -111,15 +112,15 @@ MonoBehaviour:
         volume: 0.02
       - audioClip: {fileID: 8300000, guid: ab6f122fefccba5fd9f0a1af6757a162, type: 3}
         volume: 0.01
-    - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
       pitchSpread: {x: -0.05, y: 0.05}
       sounds:
       - audioClip: {fileID: 8300000, guid: c9b354a170466d9e4bfce155a96ecdb6, type: 3}
-        volume: 0.623
+        volume: 0.455
       - audioClip: {fileID: 8300000, guid: e00e3e93fe44749cb8a90a8b29f408c3, type: 3}
-        volume: 0.607
+        volume: 0.443
     - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
@@ -127,21 +128,21 @@ MonoBehaviour:
       sounds:
       - audioClip: {fileID: 8300000, guid: 99e200413012cbc8099ea567db030d94, type: 3}
         volume: 1
-    - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
       pitchSpread: {x: -0.05, y: 0.05}
       sounds:
       - audioClip: {fileID: 8300000, guid: 6a95d7eea27ad6d9d99be548b6e375d3, type: 3}
         volume: 1
-    - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
       pitchSpread: {x: -0.05, y: 0.05}
       sounds:
       - audioClip: {fileID: 8300000, guid: ec4d2a483331f1b7ab7a10633978cf79, type: 3}
-        volume: 1
-    - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+        volume: 0.93
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 0
       pitchSpread: {x: 0, y: 0}
@@ -154,7 +155,7 @@ MonoBehaviour:
         volume: 0.127
       - audioClip: {fileID: 8300000, guid: a10b1496f7b39bf3c96bcbd1194949dc, type: 3}
         volume: 0.116
-    - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
       pitchSpread: {x: -0.05, y: 0.05}
@@ -163,7 +164,7 @@ MonoBehaviour:
         volume: 1
       - audioClip: {fileID: 8300000, guid: ffd8bcd169f6848df9b4e9b8cf710a0a, type: 3}
         volume: 1
-    - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
       pitchSpread: {x: -0.05, y: 0.05}
@@ -178,7 +179,7 @@ MonoBehaviour:
         volume: 1
       - audioClip: {fileID: 8300000, guid: 78ab37d9c02dc799fbf23f61bad0bc3d, type: 3}
         volume: 1
-    - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
       pitchSpread: {x: -0.05, y: 0.05}
@@ -189,10 +190,44 @@ MonoBehaviour:
         volume: 0.564
       - audioClip: {fileID: 8300000, guid: 1d1c109ea2cd1ac76a32edb5627c7d98, type: 3}
         volume: 0.585
-    - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
       pitchSpread: {x: 0, y: 0}
       sounds:
       - audioClip: {fileID: 8300000, guid: 262d541e3052aea72bf55530397bae3a, type: 3}
         volume: 1
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+        type: 2}
+      pitch: 0
+      pitchSpread: {x: 0, y: 0}
+      sounds:
+      - audioClip: {fileID: 8300000, guid: 262d541e3052aea72bf55530397bae3a, type: 3}
+        volume: 1
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+        type: 2}
+      pitch: 1
+      pitchSpread: {x: -0.05, y: 0.05}
+      sounds:
+      - audioClip: {fileID: 8300000, guid: 2d08afa799d8e5e4a96b9596399e2c59, type: 3}
+        volume: 1
+    - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
+        type: 2}
+      pitch: 1
+      pitchSpread: {x: 0, y: 0}
+      sounds:
+      - audioClip: {fileID: 8300000, guid: d8c3d468300d19c949a3c71d14d9861e, type: 3}
+        volume: 0.1
+--- !u!114 &1711451004258317054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803390776883387521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08cb1d0b731d8cbb1ab15f32e650f600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
