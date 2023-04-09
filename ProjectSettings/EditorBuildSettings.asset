@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 6a2d2ee57398fea49afaa24d4997864f
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 36bf668c70aa072499bcc7666aab2987
+  - enabled: 1
     path: Assets/Scenes/FinalScene.unity
     guid: a19a3c50f8db84f438a45c99f7a200dc
   - enabled: 0

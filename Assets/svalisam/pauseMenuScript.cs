@@ -13,6 +13,7 @@ public class pauseMenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         menu.SetActive(false);
         loseScreen.SetActive(false);
         winScreen.SetActive(false);
