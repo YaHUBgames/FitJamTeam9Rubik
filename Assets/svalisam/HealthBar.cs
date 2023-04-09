@@ -9,6 +9,7 @@ public class HealthBar : MonoBehaviour
     int maxHealth;
     public int health;
     throwScript player;
+    public ShakeCamera cameraShake;
 
     public Slider slider;
     void Start()
@@ -32,8 +33,8 @@ public class HealthBar : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        Debug.Log("TAKE GAMAGE");
+        player.LoseDice(5);
+        cameraShake.shake(0.5f, 2);
         AudioManager.PlayStereoSound(ESound.DiceLost, transform.position);
-        health -= damage;
     }
 }
