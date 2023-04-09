@@ -51,7 +51,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _fresnel: 25.1
-    - _maxsize: 5
+    - _maxsize: 5.06
     - _offset: -2
-    m_Colors: []
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
