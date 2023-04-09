@@ -17,7 +17,7 @@ public class InteragSoundBeacon : MonoBehaviour
         {
             yield return new WaitForSeconds(speed);
             
-            AudioManager.PlayStereoSound(ESound.InteractiblePing, transform.position);
+            AudioManager.PlayStereoSound(ESound.InteractiblePing, transform.position, transform);
         }
     }
 }
