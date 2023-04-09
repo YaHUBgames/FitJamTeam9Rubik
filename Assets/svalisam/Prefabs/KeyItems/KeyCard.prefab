@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 758734658277777201}
   - component: {fileID: 758734658277777207}
   - component: {fileID: 758734658277777204}
+  - component: {fileID: -67644964096086936}
   m_Layer: 0
   m_Name: KeyCard
   m_TagString: Untagged
@@ -70,6 +71,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   effect: {fileID: 7334374162569163976, guid: 8945b372fc06bfc43b1d50ffafd3f0ac, type: 3}
+--- !u!114 &-67644964096086936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758734658277777205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d876507b97f28c9978392fe7747772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
 --- !u!1001 &5924894929000097848
 PrefabInstance:
   m_ObjectHideFlags: 0
