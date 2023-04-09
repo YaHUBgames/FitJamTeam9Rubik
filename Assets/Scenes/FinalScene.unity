@@ -31209,7 +31209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You did it! No longer will your leagon suffer as slaves to those opressors.
+  m_text: You did it! No longer will your legion suffer as slaves to those opressors.
     Now you can ejoy the endless possibilities you have.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
