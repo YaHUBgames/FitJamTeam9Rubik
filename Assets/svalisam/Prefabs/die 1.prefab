@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle: {fileID: 3419755068105348690, guid: 7814c06b40e399740a0f1f23194bb5c9,
     type: 3}
-  sonar: {fileID: 2080049787865581286, guid: c708e36858d984d4b85a442b29c5e086, type: 3}
+  sonar: {fileID: 2080049787865581286, guid: 8be4b6b94a35cf52f9e8c5aba2686bc5, type: 3}
 --- !u!54 &2048621173573736740
 Rigidbody:
   m_ObjectHideFlags: 0

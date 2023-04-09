@@ -253,9 +253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 2132125059}
-  turnOnRate: 0.01
-  turnOffRate: 0.01
-  maxVolume: 0.1
+  turnOnRate: 0.002
+  turnOffRate: 0.002
+  maxVolume: 0.08
   hourglass: 0
   on: 0
 --- !u!82 &2132125059

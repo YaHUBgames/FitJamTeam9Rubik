@@ -65,6 +65,7 @@ namespace PP.AI
             StartCoroutine(SightUpdate());
         }
 
+        private bool whistle = false;
         private IEnumerator SightUpdate()
         {
             yield return new WaitForEndOfFrame();
@@ -72,8 +73,20 @@ namespace PP.AI
             while (true)
             {
                 SightCheck();
+                if(!whistle && Random.Range(0,10000) < 2 && aIState != EAIState.Chase)
+                {
+                    whistle = true;
+                    AudioManager.PlayStereoSound(ESound.GuardWhistle, transform.position, _transform);
+                    StartCoroutine(WhistleReset());
+                }
                 yield return new WaitForSeconds(updateT);
             }
+        }
+
+        private IEnumerator WhistleReset()
+        {
+            yield return new WaitForSeconds(100);
+            whistle = false;;
         }
 
         private void SightCheck()
@@ -105,7 +118,7 @@ namespace PP.AI
                         anim.SetBool("IsRunning", true);
                         patrolLoop.SetActive(false);
                         chaseLoop.SetActive(true);
-                        Music._instance.TriggerMusic(2);
+                        Music._instance.TriggerMusic(4);
                         if(returnPointsSpawned == 0)
                         {
                             returnPoints.Add(Instantiate(returnpoint, _transform.position - _transform.forward, Quaternion.identity).transform);
