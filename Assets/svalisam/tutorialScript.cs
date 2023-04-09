@@ -11,13 +11,13 @@ public class tutorialScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        screen2.SetActive(false);
+        screen3.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void firstStep()
@@ -39,6 +39,12 @@ public class tutorialScript : MonoBehaviour
 
     public void Play(){
         SceneManager.LoadScene(2);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+            Play();
     }
 
 }

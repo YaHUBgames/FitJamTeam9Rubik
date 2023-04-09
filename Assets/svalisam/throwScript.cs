@@ -92,6 +92,8 @@ public class throwScript : MonoBehaviour
     public void AddDice(int amount)
     {
         dice += amount;
+        if (dice > 200)
+            dice = 200;
     }
 
     public void LoseDice(int amount)
