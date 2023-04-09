@@ -15,7 +15,6 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponentInChildren<throwScript>();
-        maxHealth = player.dice;
         health = maxHealth;
     }
 
