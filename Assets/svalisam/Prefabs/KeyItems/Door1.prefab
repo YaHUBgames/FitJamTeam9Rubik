@@ -405,7 +405,6 @@ GameObject:
   - component: {fileID: 8091754708267137574}
   - component: {fileID: 8091754708267137568}
   - component: {fileID: 8091754708267137571}
-  - component: {fileID: 7036897810696574222}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -469,16 +468,3 @@ MonoBehaviour:
   key5: 0
   key6: 0
   doorCollider: {fileID: 8091754708267137568}
---- !u!114 &7036897810696574222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8091754708267137570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55d876507b97f28c9978392fe7747772, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20

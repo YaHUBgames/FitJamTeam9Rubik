@@ -105,6 +105,7 @@ namespace PP.AI
                         anim.SetBool("IsRunning", true);
                         patrolLoop.SetActive(false);
                         chaseLoop.SetActive(true);
+                        Music._instance.TriggerMusic(2);
                         if(returnPointsSpawned == 0)
                         {
                             returnPoints.Add(Instantiate(returnpoint, _transform.position - _transform.forward, Quaternion.identity).transform);
