@@ -224,7 +224,7 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   groundMask:
     serializedVersion: 2
-    m_Bits: 47
+    m_Bits: 16431
   waterMask:
     serializedVersion: 2
     m_Bits: 16
@@ -326,7 +326,7 @@ MonoBehaviour:
   die: {fileID: 2428348925597872535, guid: 04e0946151dcacf43b5d423ea4c765d1, type: 3}
   die1: {fileID: 2428348925597872535, guid: 20cb97b04be0eea4aad12bfbcfffd462, type: 3}
   mousePos: {x: 0, y: 0, z: 0}
-  dice: 0
+  dice: 100
 --- !u!1 &1049538572335999852
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 1049538572335999849}
   m_Layer: 6
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1162,12 +1162,37 @@ PrefabInstance:
     - target: {fileID: 1057188074185942234, guid: 7db2d6bdb44052679bfca6d7840fd75a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057188074185942236, guid: 7db2d6bdb44052679bfca6d7840fd75a,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057188074185942236, guid: 7db2d6bdb44052679bfca6d7840fd75a,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1057188074185942237, guid: 7db2d6bdb44052679bfca6d7840fd75a,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057188074185942237, guid: 7db2d6bdb44052679bfca6d7840fd75a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057188074185942237, guid: 7db2d6bdb44052679bfca6d7840fd75a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057188074185942237, guid: 7db2d6bdb44052679bfca6d7840fd75a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 1057188074185942237, guid: 7db2d6bdb44052679bfca6d7840fd75a,
         type: 3}
@@ -1177,7 +1202,7 @@ PrefabInstance:
     - target: {fileID: 1057188074185942237, guid: 7db2d6bdb44052679bfca6d7840fd75a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.86
       objectReference: {fileID: 0}
     - target: {fileID: 1057188074185942237, guid: 7db2d6bdb44052679bfca6d7840fd75a,
         type: 3}
@@ -1257,17 +1282,17 @@ PrefabInstance:
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.8
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.8
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.8
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}
@@ -1277,7 +1302,7 @@ PrefabInstance:
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}

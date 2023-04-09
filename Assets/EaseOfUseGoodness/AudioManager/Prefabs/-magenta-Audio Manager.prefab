@@ -195,10 +195,10 @@ MonoBehaviour:
     - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
-      pitchSpread: {x: 0, y: 0}
+      pitchSpread: {x: -0.1, y: 0.1}
       sounds:
-      - audioClip: {fileID: 8300000, guid: 262d541e3052aea72bf55530397bae3a, type: 3}
-        volume: 1
+      - audioClip: {fileID: 8300000, guid: 95c2139a3c895af5dbfc757aad7fe0ec, type: 3}
+        volume: 0.476
     - mixer: {fileID: -3897683263682436940, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 0
@@ -268,7 +268,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7edfc71013277354a8e0f3f57ec2646d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2ec86d961ebadb94b88e86c4a4e46014, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
