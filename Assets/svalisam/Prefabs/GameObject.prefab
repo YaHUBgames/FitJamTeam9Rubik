@@ -37,7 +37,6 @@ Transform:
   - {fileID: 1049538572280879425}
   - {fileID: 1049538572401798028}
   - {fileID: 4209796605324836570}
-  - {fileID: 4860743569814316253}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -853,37 +852,6 @@ Transform:
   m_Father: {fileID: 4209796605324836570}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 197.02701, y: 150.531, z: -33.69702}
---- !u!1 &5205884270110555751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4860743569814316253}
-  m_Layer: 0
-  m_Name: casino_functionals
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4860743569814316253
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205884270110555751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1049538571037167023}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6278443233154017441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1159,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SonarLoop
       objectReference: {fileID: 0}
+    - target: {fileID: 1057188074185942234, guid: 7db2d6bdb44052679bfca6d7840fd75a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1057188074185942237, guid: 7db2d6bdb44052679bfca6d7840fd75a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1271,6 +1244,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiceSplashSphere
       objectReference: {fileID: 0}
+    - target: {fileID: 2909894321172964504, guid: 36df196a6423bc5aa83b96deaa3b0eba,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c4f3868c457dce918710716a1cdb7ab, type: 2}
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}
       propertyPath: m_RootOrder
@@ -1299,7 +1277,7 @@ PrefabInstance:
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 2909894321172964506, guid: 36df196a6423bc5aa83b96deaa3b0eba,
         type: 3}
