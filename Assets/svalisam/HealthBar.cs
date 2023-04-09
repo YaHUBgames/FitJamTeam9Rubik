@@ -33,7 +33,7 @@ public class HealthBar : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        player.LoseDice(5);
+        player.LoseDice(damage);
         cameraShake.shake(0.5f, 2);
         AudioManager.PlayStereoSound(ESound.DiceLost, transform.position);
     }

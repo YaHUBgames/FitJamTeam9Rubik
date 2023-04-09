@@ -83,7 +83,7 @@ namespace PP.AI
 
             else if (collision.gameObject.tag == "Player" && Time.time > nextAttack)
             {
-                playerHealth.takeDamage(5);
+                playerHealth.takeDamage(20);
                 nextAttack = Time.time + 1;
             }
         }
