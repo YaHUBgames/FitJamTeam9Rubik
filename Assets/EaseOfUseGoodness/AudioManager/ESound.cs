@@ -36,6 +36,8 @@ public enum ESound
     GuardHit,
     GuardWhistle,
 
-    SonarPing = 90
+    SonarPing = 90,
+    InteractiblePing,
+    BackgroundBass
     
 }
