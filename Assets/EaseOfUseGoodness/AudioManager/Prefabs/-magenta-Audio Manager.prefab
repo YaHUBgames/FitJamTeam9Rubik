@@ -102,24 +102,24 @@ MonoBehaviour:
       pitchSpread: {x: -0.05, y: 0.05}
       sounds:
       - audioClip: {fileID: 8300000, guid: 113800abc9bb4046489c405703f90462, type: 3}
-        volume: 0.05
+        volume: 0.02
       - audioClip: {fileID: 8300000, guid: 2e886e899381f79dbb6a06a88911bf8a, type: 3}
-        volume: 0.05
+        volume: 0.02
       - audioClip: {fileID: 8300000, guid: dfd36f40a83596522ae71baadbdc6bad, type: 3}
-        volume: 0.05
+        volume: 0.02
       - audioClip: {fileID: 8300000, guid: 3ca1a1f69a1e08005bbc5e121d1325d4, type: 3}
-        volume: 0.05
+        volume: 0.02
       - audioClip: {fileID: 8300000, guid: ab6f122fefccba5fd9f0a1af6757a162, type: 3}
-        volume: 0.05
+        volume: 0.01
     - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
       pitchSpread: {x: -0.05, y: 0.05}
       sounds:
       - audioClip: {fileID: 8300000, guid: c9b354a170466d9e4bfce155a96ecdb6, type: 3}
-        volume: 1
+        volume: 0.623
       - audioClip: {fileID: 8300000, guid: e00e3e93fe44749cb8a90a8b29f408c3, type: 3}
-        volume: 1
+        volume: 0.607
     - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
       pitch: 1
@@ -143,8 +143,8 @@ MonoBehaviour:
         volume: 1
     - mixer: {fileID: -1674704494519878205, guid: 8cc06b29116a6a34dac2e2e4ddf9cfc1,
         type: 2}
-      pitch: 1
-      pitchSpread: {x: -0.05, y: 0.05}
+      pitch: 0
+      pitchSpread: {x: 0, y: 0}
       sounds:
       - audioClip: {fileID: 8300000, guid: 7d23c63d4067ffca3be3af322f9c7d8a, type: 3}
         volume: 0.105

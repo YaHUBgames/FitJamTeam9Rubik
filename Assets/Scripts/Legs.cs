@@ -34,7 +34,6 @@ namespace PP.AI
             if(walked >= stepSize)
             {
                 walked -= stepSize;
-
                 AudioManager.PlayStereoSound(ESound.GuardStep, transform.position);
             }
 

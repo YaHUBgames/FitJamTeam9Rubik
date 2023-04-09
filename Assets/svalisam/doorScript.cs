@@ -78,7 +78,7 @@ public class doorScript : MonoBehaviour
             if(key1 || key4 || key5 || key6)
                 AudioManager.PlayStereoSound(ESound.OpenDoorWithCard, transform.position);
   
-            if(key3 || key5)
+            if(key3 || key2)
                 AudioManager.PlayStereoSound(ESound.OpenDoorWithKey, transform.position);
     
             doorCollider.enabled = false;
